@@ -1,0 +1,46 @@
+<AbsenScreenView>
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Absensi"
+            right_action_items: 
+                [
+                ['account-circle', lambda x: root.open(), "My Profile", "My Profile"],
+
+                ["logout",lambda x: root._keluar(), "Keluar Aplikasi", "Keluar Aplikasi"],
+                # ["message-star", lambda x: app.callback(x), "Message star", "Message star"],
+                # ["message-question", lambda x: app.callback(x), "Message question", "Message question"],
+                # ["message-reply", lambda x: app.callback(x), "Message reply", "Message reply"],
+                ]
+        MDBoxLayout:
+            padding: ('30dp', '30dp', '30dp', '0dp')
+            IconCustomButton:
+                source:root.img
+                size_hint:1,1
+                lampu:root.status
+                on_release:root.click(root.status)
+        MDLabel:
+            text:root.textlampu
+            halign:'center'
+            size_hint:1,None
+        # Image:
+        #     source:""
+
+        MDBoxLayout:
+            orientation:'vertical'
+        # ScrollView:
+        #     size_hint: None, None
+        #     size: 200, 200
+
+        #     do_scroll_x: True
+        #     do_scroll_y: True
+        #     MDBoxLayout:
+        #         orientation: 'vertical'
+ 
+
+            # canvas.before:
+            #     Color:
+            #         rgba: app.theme_cls.primary_color
+            #     Rectangle:
+            #         pos: self.pos
+            #         size: self.size

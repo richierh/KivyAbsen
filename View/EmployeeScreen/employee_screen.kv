@@ -1,0 +1,16 @@
+<EmployeeScreenView>
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Ruang Tenaga Kerja"
+            right_action_items: 
+                [
+                ["home",lambda x: root.parent.get_screen('server screen')._halamanutama(), "Keluar Aplikasi", "Keluar Aplikasi"],
+                ['account-circle', lambda x: root.parent.get_screen('absen screen').open(), "My Profile", "My Profile"],
+                # ["message-star", lambda x: app.callback(x), "Message star", "Message star"],
+                # ["message-question", lambda x: app.callback(x), "Message question", "Message question"],
+                # ["message-reply", lambda x: app.callback(x), "Message reply", "Message reply"],
+                ]
+        
+        MDBoxLayout:
+            orientation: 'vertical'

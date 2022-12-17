@@ -1,0 +1,82 @@
+<ServerScreenView>
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Ruang Admin"
+            right_action_items: 
+                [
+                ['account-circle', lambda x: root.parent.get_screen('absen screen').open(), "My Profile", "My Profile"],
+                ["logout",lambda x: root.parent.get_screen('absen screen')._keluar(), "Keluar Aplikasi", "Keluar Aplikasi"],
+                # ["message-star", lambda x: app.callback(x), "Message star", "Message star"],
+                # ["message-question", lambda x: app.callback(x), "Message question", "Message question"],
+                # ["message-reply", lambda x: app.callback(x), "Message reply", "Message reply"],
+                ]
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint:1,.5
+            MDBoxLayout:
+                size_hint:1,.5
+                padding: ('10dp', '10dp', '10dp', '10dp')
+                orientation: 'vertical'
+                MDBoxLayout:  
+                    orientation: 'vertical'
+                    IconCustomButton:
+                        source:'assets/images/logo/report.png'
+                        on_release: root.manager_screens.current='report screen'
+                MDBoxLayout:  
+                    orientation: 'vertical' 
+                    size_hint:1,.5
+                    MDLabel:  
+                        text:'laporan'
+                        halign:'center'
+                        size_hint:1,1
+                MDBoxLayout:
+                    spacing:20
+                    orientation: 'horizontal'
+                    IconCustomButton:
+                        source:'assets/images/logo/employee.png'
+                        on_release: root.manager_screens.current='employee screen'
+                    IconCustomButton:
+                        source:'assets/images/logo/icontimer.png'
+                        on_release: root.manager_screens.current='time screen'
+                MDBoxLayout:
+                    spacing:20
+                    orientation: 'horizontal'
+                    size_hint:1,.5
+                    MDLabel:
+                        size_hint:1,1
+                        text: "Tenaga Kerja"
+                        halign:'center'
+                    MDLabel:
+                        size_hint:1,1
+                        text: "Waktu"
+                        halign:'center'
+                        # size_hint:1,None
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    MDBoxLayout:
+                        spacing:20
+                        orientation: 'horizontal'
+                        IconCustomButton:
+                            source:'assets/images/logo/profil.png'
+                            on_release: root.manager_screens.current='profil screen'
+
+                        IconCustomButton:
+                            source:'assets/images/logo/settings.png'
+                            on_release: root.manager_screens.current='settings screen'
+
+                MDBoxLayout:
+                    orientation: 'horizontal'
+                    size_hint:1,.5
+                    spacing:20
+                    MDLabel:
+                        size_hint:1,1
+                        text: "Profil"
+                        halign:'center'
+                    MDLabel:
+                        text: "Pengaturan"
+                        halign:'center'
+                        size_hint:1,1

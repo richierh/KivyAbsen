@@ -1,0 +1,76 @@
+<MainScreenView>
+    username:username
+    password:password
+    size_hint: 1, 1
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "assets/images/background_login.png"
+    MDBoxLayout:
+        orientation:'vertical'
+        size_hint:1,1
+        spacing : 10
+        MDBoxLayout:
+            size_hint:1,1
+        Image:
+            source:"assets/images/logoabsensi.png"
+            size_hint:1,1
+            pos_hint: {'center_x': .5, 'center_y': 1}
+        MDLabel:
+            text:'Absensi'
+            size_hint: 1,1
+            halign:'center'
+
+        MDBoxLayout:
+            orientation:'vertical'
+            spacing:5
+            size_hint:1,1
+            padding: ('0dp', '10dp', '0dp', '10dp')
+            
+            MDTextField:
+                id:username
+                pos_hint:{'center_x':.5,'center_y':.5}
+                size_hint:.5,None
+                color_mode: 'custom'
+                hint_text: "Username/No.Hp"
+                mode: "rectangle"
+                line_color_normal:32/255, 123/255, 160/255, 1
+                line_color_focus: 32/255, 123/255, 160/255, 1
+            MDTextField:
+                id:password
+                pos_hint:{'center_x':.5,'center_y':.5}
+                pos:self.parent.pos
+                size_hint:.5,None
+                color_mode: 'custom'
+                hint_text: "Password"
+                mode: "rectangle"
+                line_color_normal:32/255, 123/255, 160/255, 1
+                line_color_focus: 32/255, 123/255, 160/255, 1
+        MDBoxLayout:
+            orientation:'vertical'
+            size_hint:1,1
+
+            MDBoxLayout:
+                padding: ('0dp', '30dp', '0dp', '0dp')
+                orientation:'horizontal'
+                pos_hint:{'center_x':.5,'center_y':.5}
+                size_hint:.5,None
+                spacing :20
+                MDFillRoundFlatButton:
+                    text: "Login"
+                    pos_hint:{'center_x':.5,'center_y':1}
+                    # md_bg_color: get_color_from_hex("#207BA0")
+                    md_bg_color: 32/255, 123/255, 160/255, 1
+                    on_release:root.login(username,password)
+                MDFillRoundFlatButton:
+                    text: "Sign Up"
+                    size_hint:1,None
+                    pos_hint:{'center_x':.5,'center_y':1}
+                    # md_bg_color: get_color_from_hex("#207BA0")
+                    md_bg_color: 32/255, 123/255, 160/255, 1
+                    on_release:root.manager_screens.current='registration screen'
+    
+        MDBoxLayout:
+            orientation:'vertical'
+            size_hint:1,1
